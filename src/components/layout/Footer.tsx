@@ -7,15 +7,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Programs", href: "#programs" },
+    { name: "About Us", href: "/about" },
+    { name: "Programs", href: "/programs" },
+    // Ini apa di homepage aja?
     { name: "Impact", href: "#impact" },
     { name: "Join Us", href: "#join" },
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/studentsxceosjkt/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/studentsxceos", label: "LinkedIn" },
     { icon: Mail, href: "mailto:contact@studentsxceos.com", label: "Email" },
   ];
 
