@@ -14,17 +14,12 @@ import { useEmailJS } from "@/hooks/use-emailjs";
 import { contactInfo } from "./data/contact-info";
 import { socialLinks } from "./data/social-links";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
-
-const ContactModule = (  ) => {
+const ContactModule = () => {
   const pathName = usePathname();
-  const router = useRouter();
   const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: pathName == "/contact" ? "700px" : "-100px",
-  });
+  const isInView = useInView(ref, { once: true, margin: pathName == "/contact" ? "700px" : "-100px" });
 
   const [isMapError, setIsMapError] = useState(false);
   const [formData, setFormData] = useState({
@@ -59,7 +54,7 @@ const ContactModule = (  ) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider cursor-pointer" onClick={() => pathName == "/contact" ? router.push("/#contact") : router.push("/contact")}>
+          <span className="text-primary text-sm font-semibold uppercase tracking-wider cursor-pointer">
             Contact Us
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">
