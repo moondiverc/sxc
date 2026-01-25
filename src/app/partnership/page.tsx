@@ -1,7 +1,11 @@
-import { PartnershipModule } from "@/components/modules/PartnershipModule";
+import PartnershipModule from "@/components/modules/PartnershipModule";
 
 const PartnershipPage = () => {
-  return <PartnershipModule />;
+   return (
+        <div className="min-h-screen">
+            <PartnershipModule />
+        </div>
+    );
 };
 
 export default PartnershipPage;
