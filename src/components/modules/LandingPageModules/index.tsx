@@ -5,6 +5,7 @@ import ProgramsSection from "@/components/modules/LandingPageModules/sections/Pr
 import ImpactSection from "@/components/modules/LandingPageModules/sections/ImpactSection";
 import PartnershipSection from "@/components/modules/LandingPageModules/sections/PartnershipSection";
 import ContactModule from "@/components/modules/ContactModule";
+import ChatbotFAB from "@/components/modules/ChatbotModule";
 
 
 export default function LandingPageModule() {
@@ -17,6 +18,7 @@ export default function LandingPageModule() {
       <ImpactSection />
       <PartnershipSection />
       <ContactModule />
+      <ChatbotFAB />
     </div>
   );
 }

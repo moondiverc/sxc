@@ -10,6 +10,8 @@ import PartnershipCTA from "./section/PartnershipCTA";
 
 import { stakeholders } from "./data/stakeholders";
 import { partnershipPrograms } from "./data/partnership-programs";
+import PartnershipLogoCarousel from "./section/PartnershipLogoCarousel";
+import { partnerLogos } from "./data/partner-logos";
 
 const PartnershipModule = () => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -32,11 +34,19 @@ const PartnershipModule = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="max-w-6xl mx-auto"
         >
+          {/* Partner logo carousel */}
+          <PartnershipLogoCarousel
+            items={partnerLogos}
+            title="Partner Logo"
+            subtitle="Perusahaan & komunitas yang sudah berkolaborasi."
+          />
+
           {/* Stakeholders */}
           <div className="mb-10">
             <h3 className="text-2xl font-bold mb-4">Key Stakeholders</h3>
             <p className="text-muted-foreground mb-6">
-              Kolaborasi kami bertumpu pada relasi kuat dengan stakeholder utama dalam ekosistem pengembangan talenta.
+              Kolaborasi kami bertumpu pada relasi kuat dengan stakeholder utama
+              dalam ekosistem pengembangan talenta.
             </p>
             <StakeholderGrid items={stakeholders} />
           </div>
@@ -45,7 +55,8 @@ const PartnershipModule = () => {
           <div className="mt-14">
             <h3 className="text-2xl font-bold mb-4">Partnership Programs</h3>
             <p className="text-muted-foreground mb-6">
-              Contoh program kolaborasi yang dirancang untuk menghasilkan outcome nyata dan terukur.
+              Contoh program kolaborasi yang dirancang untuk menghasilkan
+              outcome nyata dan terukur.
             </p>
             <PartnershipProgramList items={partnershipPrograms} />
           </div>
@@ -60,6 +71,6 @@ const PartnershipModule = () => {
       </div>
     </section>
   );
-}
+};
 
 export default PartnershipModule;

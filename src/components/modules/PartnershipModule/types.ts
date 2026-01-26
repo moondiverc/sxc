@@ -22,3 +22,10 @@ export interface PartnershipProgramDTO {
   href?: string;
   tags?: string[];
 }
+
+export type PartnerLogo = {
+  id: string
+  name: string
+  logoSrc: string     
+  href?: string       
+}

@@ -56,7 +56,7 @@ export const programs = [
     description:
       "Immersive leadership camp designed to build character, teamwork, and personal growth through outdoor activities and intensive training sessions",
     icon: GraduationCap,
-    color: "from-yellow-500 to-orange-500",
+    color: "from-yellow-300 to-orange-500",
   },
   {
     id: 7,
