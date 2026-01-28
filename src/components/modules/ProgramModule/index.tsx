@@ -3,60 +3,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import {
-  BookOpen,
-  Briefcase,
-  Handshake,
-  Award,
-  ArrowRight,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-const programs = [
-  {
-    icon: BookOpen,
-    title: "Case-Based Learning",
-    description:
-      "Engage with real business cases from top companies. Develop analytical thinking and problem-solving skills through hands-on experience.",
-    color: "from-primary to-accent",
-    features: ["Real Company Cases", "Expert Mentorship", "Team Collaboration"],
-  },
-  {
-    icon: Briefcase,
-    title: "Leadership Accelerator",
-    description:
-      "Fast-track your leadership journey with our intensive programs designed to build boardroom-ready skills.",
-    color: "from-accent to-primary",
-    features: [
-      "Executive Workshops",
-      "Soft Skills Training",
-      "Career Guidance",
-    ],
-  },
-  {
-    icon: Handshake,
-    title: "Corporate Connect",
-    description:
-      "Direct access to 100+ corporate partners. Network with industry leaders and explore internship opportunities.",
-    color: "from-primary to-amber-400",
-    features: ["Networking Events", "Internship Pipeline", "Industry Exposure"],
-  },
-  {
-    icon: Award,
-    title: "Apprenticeship Program",
-    description:
-      "Join our selective apprenticeship to gain practical experience while contributing to real organizational projects.",
-    color: "from-amber-400 to-primary",
-    features: ["Project Experience", "Skill Development", "Certificate"],
-  },
-];
+import { programs } from "./const";
 
 export const ProgramModule = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="programs" className="py-20 md:py-32 bg-muted/30">
+    <section id="programs" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <motion.div
@@ -77,49 +31,54 @@ export const ProgramModule = () => {
           </p>
         </motion.div>
 
-        {/* Programs Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {programs.map((program, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-card rounded-2xl p-6 md:p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
-              {/* Icon */}
-              <div
-                className={`w-14 h-14 rounded-xl bg-linear-to-br ${program.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <program.icon className="w-7 h-7 text-white" />
-              </div>
+        {/* Programs List - Vertical Layout */}
+        <div className="max-w-4xl mx-auto space-y-6">
+          {programs.map((program, index) => {
+            const Icon = program.icon;
+            return (
+              <motion.div
+                key={program.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-card rounded-2xl p-6 md:p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+                <div className="flex gap-6 md:gap-8">
+                  {/* Left: Icon/Logo Placeholder */}
+                  <div className="shrink-0">
+                    <div
+                      className={`w-20 h-20 md:w-24 md:h-24 rounded-xl bg-linear-to-br ${program.color} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                      <Icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
+                    </div>
+                  </div>
 
-              {/* Content */}
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
-                {program.title}
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                {program.description}
-              </p>
+                  {/* Right: Content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Title */}
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {program.title}
+                    </h3>
 
-              {/* Features */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {program.features.map((feature, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full">
-                    {feature}
-                  </span>
-                ))}
-              </div>
+                    {/* Description */}
+                    <p className="text-muted-foreground mb-4 text-sm md:text-base">
+                      {program.description}
+                    </p>
 
-              {/* CTA */}
-              <Button
-                variant="ghost"
-                className="text-primary hover:text-primary hover:bg-primary/10 p-0 group/btn">
-                Learn More
-                <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Button>
-            </motion.div>
-          ))}
+                    {/* Tags/Features */}
+                    <div className="flex flex-wrap gap-2">
+                      {program.features &&
+                        program.features.map((feature, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 text-xs md:text-sm bg-primary/10 text-primary rounded-full font-medium hover:bg-primary/20 transition-colors">
+                            {feature}
+                          </span>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
