@@ -49,7 +49,7 @@ const ProgramsSection = () => {
                   <div className="shrink-0">
                     <div className="relative">
                       <div
-                        className={`relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${program.color} ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-105 md:h-20 md:w-20`}>
+                        className={`relative flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br ${program.color} ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-105 md:h-20 md:w-20`}>
                         <Icon className="h-8 w-8 text-white md:h-10 md:w-10" />
                       </div>
                     </div>
