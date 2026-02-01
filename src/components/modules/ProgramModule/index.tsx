@@ -31,8 +31,8 @@ export const ProgramModule = () => {
           </p>
         </motion.div>
 
-        {/* Programs List - Vertical Layout */}
-        <div className="max-w-4xl mx-auto space-y-6">
+        {/* Programs List - Horizontal Layout */}
+        <div className="max-w-6xl mx-auto space-y-8">
           {programs.map((program, index) => {
             const Icon = program.icon;
             return (
@@ -41,39 +41,39 @@ export const ProgramModule = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-card rounded-2xl p-6 md:p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                <div className="flex gap-6 md:gap-8">
+                className="group bg-card rounded-3xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-2xl">
+                <div className="flex flex-col md:flex-row gap-0 md:gap-0 h-full">
                   {/* Left: Icon/Logo Placeholder */}
-                  <div className="shrink-0">
+                  <div className="shrink-0 w-full md:w-60 h-64 md:h-auto">
                     <div
-                      className={`w-20 h-20 md:w-24 md:h-24 rounded-xl bg-linear-to-br ${program.color} flex items-center justify-center group-hover:scale-105 transition-transform`}>
-                      <Icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
+                      className={`w-full h-full rounded-3xl md:rounded-none bg-linear-to-br ${program.color} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                      <Icon className="w-20 h-20 md:w-24 md:h-24 text-white" />
                     </div>
                   </div>
 
                   {/* Right: Content */}
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
                     {/* Title */}
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {program.title}
                     </h3>
 
-                    {/* Description */}
-                    <p className="text-muted-foreground mb-4 text-sm md:text-base">
-                      {program.description}
-                    </p>
-
                     {/* Tags/Features */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-3 mb-5">
                       {program.features &&
                         program.features.map((feature, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 text-xs md:text-sm bg-primary/10 text-primary rounded-full font-medium hover:bg-primary/20 transition-colors">
+                            className="px-4 py-2 text-sm md:text-base bg-primary/10 text-primary rounded-full font-medium hover:bg-primary/20 transition-colors">
                             {feature}
                           </span>
                         ))}
                     </div>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                      {program.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
