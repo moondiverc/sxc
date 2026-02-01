@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { programs } from "./const";
+import ChatbotFAB from "../ChatbotModule";
 
 export const ProgramModule = () => {
   const ref = useRef(null);
@@ -18,7 +19,8 @@ export const ProgramModule = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16">
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Our Programs
           </span>
@@ -41,12 +43,14 @@ export const ProgramModule = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-card rounded-2xl p-6 md:p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+                className="group bg-card rounded-2xl p-6 md:p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+              >
                 <div className="flex gap-6 md:gap-8">
                   {/* Left: Icon/Logo Placeholder */}
                   <div className="shrink-0">
                     <div
-                      className={`w-20 h-20 md:w-24 md:h-24 rounded-xl bg-linear-to-br ${program.color} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                      className={`w-20 h-20 md:w-24 md:h-24 rounded-xl bg-linear-to-br ${program.color} flex items-center justify-center group-hover:scale-105 transition-transform`}
+                    >
                       <Icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
                     </div>
                   </div>
@@ -69,7 +73,8 @@ export const ProgramModule = () => {
                         program.features.map((feature, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 text-xs md:text-sm bg-primary/10 text-primary rounded-full font-medium hover:bg-primary/20 transition-colors">
+                            className="px-3 py-1 text-xs md:text-sm bg-primary/10 text-primary rounded-full font-medium hover:bg-primary/20 transition-colors"
+                          >
                             {feature}
                           </span>
                         ))}
@@ -81,6 +86,7 @@ export const ProgramModule = () => {
           })}
         </div>
       </div>
+      <ChatbotFAB />
     </section>
   );
 };

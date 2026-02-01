@@ -12,6 +12,7 @@ import { stakeholders } from "./data/stakeholders";
 import { partnershipPrograms } from "./data/partnership-programs";
 import PartnershipLogoCarousel from "./section/PartnershipLogoCarousel";
 import { partnerLogos } from "./data/partner-logos";
+import ChatbotFAB from "../ChatbotModule";
 
 const PartnershipModule = () => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -69,6 +70,7 @@ const PartnershipModule = () => {
           />
         </motion.div>
       </div>
+      <ChatbotFAB />
     </section>
   );
 };

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
+    domains: ["logo.clearbit.com"],
   },
 };
 
