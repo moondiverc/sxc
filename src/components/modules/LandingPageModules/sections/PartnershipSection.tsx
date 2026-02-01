@@ -13,69 +13,7 @@ import {
 } from "lucide-react";
 import PartnerLogoCarousel from "../../PartnershipModule/section/PartnershipLogoCarousel";
 import AnimatedCounter from "./AnimatedCounterComponent";
-
-const partnerLogos = [
-  {
-    id: "unilever",
-    name: "Unilever",
-    logoSrc: "https://logo.clearbit.com/unilever.com",
-  },
-  {
-    id: "bca",
-    name: "Bank BCA",
-    logoSrc: "https://logo.clearbit.com/bca.co.id",
-  },
-  {
-    id: "telkom",
-    name: "Telkom Indonesia",
-    logoSrc: "https://logo.clearbit.com/telkom.co.id",
-  },
-  {
-    id: "pertamina",
-    name: "Pertamina",
-    logoSrc: "https://logo.clearbit.com/pertamina.com",
-  },
-  {
-    id: "tokopedia",
-    name: "Tokopedia",
-    logoSrc: "https://logo.clearbit.com/tokopedia.com",
-  },
-  {
-    id: "gojek",
-    name: "Gojek",
-    logoSrc: "https://logo.clearbit.com/gojek.com",
-  },
-  {
-    id: "shopee",
-    name: "Shopee",
-    logoSrc: "https://logo.clearbit.com/shopee.co.id",
-  },
-  {
-    id: "mckinsey",
-    name: "McKinsey",
-    logoSrc: "https://logo.clearbit.com/mckinsey.com",
-  },
-  {
-    id: "bcg",
-    name: "BCG",
-    logoSrc: "https://logo.clearbit.com/bcg.com",
-  },
-  {
-    id: "deloitte",
-    name: "Deloitte",
-    logoSrc: "https://logo.clearbit.com/deloitte.com",
-  },
-  {
-    id: "google",
-    name: "Google",
-    logoSrc: "https://logo.clearbit.com/google.com",
-  },
-  {
-    id: "microsoft",
-    name: "Microsoft",
-    logoSrc: "https://logo.clearbit.com/microsoft.com",
-  },
-];
+import { partnerLogos } from "../data/partner-logos";
 
 const partnershipTypes = [
   {
