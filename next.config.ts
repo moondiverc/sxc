@@ -9,7 +9,12 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
-    domains: ["logo.clearbit.com"],
+    domains: [
+      "logo.clearbit.com",
+      "upload.wikimedia.org",
+      "logospng.org",
+      "wallpapercave.com",
+    ],
   },
 };
 
