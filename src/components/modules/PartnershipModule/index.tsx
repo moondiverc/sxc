@@ -66,7 +66,7 @@ const PartnershipModule = () => {
             title="Let’s build impact together"
             description="Have a talent development programme, scholarship or initiative? We can design the curriculum, execute the programme, and measure the impact together."
             primaryLabel="Contact Partnership Team"
-            primaryHref="#contact"
+            primaryHref="/contact"
           />
         </motion.div>
       </div>
