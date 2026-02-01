@@ -11,20 +11,70 @@ import {
   Handshake,
   Target,
 } from "lucide-react";
+import PartnerLogoCarousel from "../../PartnershipModule/section/PartnershipLogoCarousel";
+import AnimatedCounter from "./AnimatedCounterComponent";
 
 const partnerLogos = [
-  "Unilever",
-  "Bank BCA",
-  "Telkom",
-  "Pertamina",
-  "Tokopedia",
-  "Gojek",
-  "Shopee",
-  "McKinsey",
-  "BCG",
-  "Deloitte",
-  "Google",
-  "Microsoft",
+  {
+    id: "unilever",
+    name: "Unilever",
+    logoSrc: "https://logo.clearbit.com/unilever.com",
+  },
+  {
+    id: "bca",
+    name: "Bank BCA",
+    logoSrc: "https://logo.clearbit.com/bca.co.id",
+  },
+  {
+    id: "telkom",
+    name: "Telkom Indonesia",
+    logoSrc: "https://logo.clearbit.com/telkom.co.id",
+  },
+  {
+    id: "pertamina",
+    name: "Pertamina",
+    logoSrc: "https://logo.clearbit.com/pertamina.com",
+  },
+  {
+    id: "tokopedia",
+    name: "Tokopedia",
+    logoSrc: "https://logo.clearbit.com/tokopedia.com",
+  },
+  {
+    id: "gojek",
+    name: "Gojek",
+    logoSrc: "https://logo.clearbit.com/gojek.com",
+  },
+  {
+    id: "shopee",
+    name: "Shopee",
+    logoSrc: "https://logo.clearbit.com/shopee.co.id",
+  },
+  {
+    id: "mckinsey",
+    name: "McKinsey",
+    logoSrc: "https://logo.clearbit.com/mckinsey.com",
+  },
+  {
+    id: "bcg",
+    name: "BCG",
+    logoSrc: "https://logo.clearbit.com/bcg.com",
+  },
+  {
+    id: "deloitte",
+    name: "Deloitte",
+    logoSrc: "https://logo.clearbit.com/deloitte.com",
+  },
+  {
+    id: "google",
+    name: "Google",
+    logoSrc: "https://logo.clearbit.com/google.com",
+  },
+  {
+    id: "microsoft",
+    name: "Microsoft",
+    logoSrc: "https://logo.clearbit.com/microsoft.com",
+  },
 ];
 
 const partnershipTypes = [
@@ -55,10 +105,15 @@ const partnershipTypes = [
 ];
 
 const benefits = [
-  { icon: Users, value: "1,000+", label: "Top Talents Access" },
-  { icon: Building2, value: "30+", label: "Partner Universities" },
-  { icon: Award, value: "100+", label: "Corporate Partners" },
-  { icon: TrendingUp, value: "85%", label: "Placement Rate" },
+  { icon: Users, value: "1,000+", maxValue: 1000, label: "Top Talents Access" },
+  {
+    icon: Building2,
+    value: "30+",
+    maxValue: 30,
+    label: "Partner Universities",
+  },
+  { icon: Award, value: "100+", maxValue: 100, label: "Corporate Partners" },
+  { icon: TrendingUp, value: "85%", maxValue: 85, label: "Placement Rate" },
 ];
 
 const PartnershipSection = () => {
@@ -74,7 +129,8 @@ const PartnershipSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16">
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Partnership
           </span>
@@ -92,14 +148,27 @@ const PartnershipSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+        >
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-card rounded-2xl p-6 border border-border text-center">
+              className="bg-card rounded-2xl p-6 border border-border text-center"
+            >
               <benefit.icon className="w-8 h-8 text-primary mx-auto mb-3" />
               <div className="text-3xl font-bold text-foreground">
-                {benefit.value}
+                <AnimatedCounter
+                  max={benefit.maxValue}
+                  suffix={
+                    benefit.value.includes("%")
+                      ? "%"
+                      : benefit.value.includes("+")
+                        ? "+"
+                        : ""
+                  }
+                  start={isInView}
+                  duration={2}
+                />
               </div>
               <div className="text-muted-foreground text-sm">
                 {benefit.label}
@@ -116,7 +185,8 @@ const PartnershipSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all group">
+              className="bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all group"
+            >
               <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <type.icon className="w-6 h-6 text-primary" />
               </div>
@@ -135,24 +205,15 @@ const PartnershipSection = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center">
-          <p className="text-muted-foreground mb-8">
-            Trusted by leading companies across Indonesia
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-            {partnerLogos.map((logo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.3, delay: 0.6 + index * 0.05 }}
-                className="bg-card/50 backdrop-blur-sm px-6 py-3 rounded-xl border border-border hover:border-primary/30 transition-all">
-                <span className="text-muted-foreground font-medium">
-                  {logo}
-                </span>
-              </motion.div>
-            ))}
-          </div>
+          className="text-center"
+        >
+          <PartnerLogoCarousel
+            items={partnerLogos}
+            title="Our Partners"
+            subtitle="Trusted by leading companies & organizations"
+            className="mt-12"
+            cardClassName="bg-card/50 backdrop-blur-sm"
+          />
         </motion.div>
       </div>
     </section>
