@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import monas from "@/assets/monas-no-bg.png";
 
@@ -40,9 +39,9 @@ const Navbar = () => {
     }
   }, [isDark]);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
+  // const toggleTheme = () => {
+  //   setIsDark(!isDark);
+  // };
 
   return (
     <motion.nav
