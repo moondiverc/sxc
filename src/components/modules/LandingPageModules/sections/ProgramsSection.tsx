@@ -136,12 +136,14 @@ const ProgramsSection = () => {
                       </div>
 
                       <div className="pt-2">
-                        <button className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] group/btn transition-colors hover:text-primary">
+                        <a
+                          href="/program"
+                          className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] group/btn transition-colors hover:text-primary">
                           Read More
                           <div className="relative flex h-10 w-10 items-center justify-center bg-primary transition-all duration-300 group-hover/btn:w-14 shrink-0">
                             <ArrowRight className="h-4 w-4 text-white" />
                           </div>
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
