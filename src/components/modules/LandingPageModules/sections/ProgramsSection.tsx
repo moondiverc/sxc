@@ -17,17 +17,7 @@ import { programs } from "@/components/modules/ProgramModule/program_data";
 
 const ProgramsSection = () => {
   const ref = useRef(null);
-  const carouselRef = useRef(null);
-  const controlsRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const isCarouselInView = useInView(carouselRef, {
-    once: true,
-    margin: "-120px",
-  });
-  const isControlsInView = useInView(controlsRef, {
-    once: true,
-    margin: "-120px",
-  });
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
@@ -88,13 +78,8 @@ const ProgramsSection = () => {
         </motion.div>
 
         {/* Carousel Viewport */}
-        <motion.div
-          ref={carouselRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isCarouselInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-7xl mx-auto overflow-hidden">
-          <div className="flex -ml-4" ref={emblaRef}>
+        <div className="max-w-7xl mx-auto overflow-hidden" ref={emblaRef}>
+          <div className="flex -ml-4">
             {programs.map((program) => (
               <div
                 key={program.id}
@@ -170,15 +155,10 @@ const ProgramsSection = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Navigation Controls */}
-        <motion.div
-          ref={controlsRef}
-          initial={{ opacity: 0, y: 20 }}
-          animate={isControlsInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-4 md:mt-8 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-8 border-t border-white/5 pt-10 px-2">
+        <div className="mt-4 md:mt-8 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-8 border-t border-white/5 pt-10 px-2">
           <button
             onClick={toggleAutoplay}
             className="flex h-12 w-12 items-center justify-center bg-white/5 border border-white/10 text-foreground hover:bg-primary hover:text-white transition-all shadow-sm group">
@@ -215,7 +195,7 @@ const ProgramsSection = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
