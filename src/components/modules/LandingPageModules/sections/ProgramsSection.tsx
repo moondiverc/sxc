@@ -13,7 +13,7 @@ import {
   Pause,
   ArrowRight,
 } from "lucide-react";
-import { programs } from "@/components/modules/ProgramModule/const";
+import { programs } from "@/components/modules/ProgramModule/program_data";
 
 const ProgramsSection = () => {
   const ref = useRef(null);

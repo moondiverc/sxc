@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { programs } from "./const";
+import { programs } from "./program_data";
 import ChatbotFAB from "../ChatbotModule";
 
 export const ProgramModule = () => {
