@@ -41,8 +41,7 @@ const ImpactSection = () => {
   return (
     <section
       id="impact"
-      className="py-20 md:py-32 bg-secondary relative overflow-hidden"
-    >
+      className="py-20 md:py-32 bg-secondary relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -61,8 +60,7 @@ const ImpactSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
+          className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Our Impact
           </span>
@@ -83,8 +81,7 @@ const ImpactSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-secondary-foreground/5 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-colors"
-            >
+              className="text-center p-6 rounded-2xl bg-secondary-foreground/5 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-colors">
               <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
                 <stat.icon className="w-7 h-7 text-primary" />
               </div>
@@ -100,6 +97,19 @@ const ImpactSection = () => {
         </div>
 
         {/* Testimonials */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+            Success Stories
+          </span>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-foreground mt-2">
+            Hear from Our <span className="text-primary">Community</span>
+          </h3>
+        </motion.div>
+
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -107,8 +117,7 @@ const ImpactSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              className="p-6 rounded-2xl bg-card border border-border flex flex-col items-center text-center"
-            >
+              className="p-6 rounded-2xl bg-card border border-border flex flex-col items-center text-center">
               <div className="w-16 h-16 mb-4 rounded-full overflow-hidden">
                 <Image
                   src={testimonial.imageSrc}
