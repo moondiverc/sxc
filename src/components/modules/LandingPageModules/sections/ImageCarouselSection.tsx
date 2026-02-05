@@ -18,32 +18,31 @@ const images: CarouselImage[] = [
     src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=600&fit=crop",
     alt: "Business Meeting",
     title: "CEO Sharing Session",
-    description: "Belajar langsung dari para pemimpin industri Indonesia",
+    description: "Learn directly from Indonesian industry leaders",
   },
   {
     src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=600&fit=crop",
     alt: "Students Collaboration",
     title: "Collaborative Learning",
-    description:
-      "Membangun jaringan dengan mahasiswa terbaik dari seluruh Indonesia",
+    description: "Network with the best students from all over Indonesia",
   },
   {
     src: "https://images.unsplash.com/photo-1560439514-4e9645039924?w=1200&h=600&fit=crop",
     alt: "Leadership Workshop",
     title: "Leadership Workshop",
-    description: "Mengasah kemampuan kepemimpinan melalui workshop intensif",
+    description: "Honing leadership skills through intensive workshops",
   },
   {
     src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=600&fit=crop",
     alt: "Networking Event",
     title: "Networking Event",
-    description: "Kesempatan networking dengan 100+ corporate partners",
+    description: "Networking opportunities with 100+ corporate partners",
   },
   {
     src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&h=600&fit=crop",
     alt: "Public Speaking",
     title: "Public Speaking Training",
-    description: "Melatih kemampuan presentasi dan public speaking",
+    description: "Practising presentation and public speaking skills",
   },
 ];
 
@@ -77,22 +76,24 @@ const ImageCarousel = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12">
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Momen{" "}
+            Precious{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-              Berharga
+              Moment
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Dokumentasi kegiatan dan program StudentsxCEOs Jakarta
+            Documentation of StudentsxCEOs Jakarta activities and programmes
           </p>
         </motion.div>
 
         <div
           className="relative max-w-5xl mx-auto"
           onMouseEnter={() => setIsAutoPlaying(false)}
-          onMouseLeave={() => setIsAutoPlaying(true)}>
+          onMouseLeave={() => setIsAutoPlaying(true)}
+        >
           {/* Main Image */}
           <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
             <AnimatePresence mode="wait">
@@ -102,7 +103,8 @@ const ImageCarousel = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="absolute inset-0">
+                className="absolute inset-0"
+              >
                 <Image
                   src={images[currentIndex].src}
                   alt={images[currentIndex].alt}
@@ -120,14 +122,16 @@ const ImageCarousel = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    className="text-2xl md:text-3xl font-bold text-white mb-2"
+                  >
                     {images[currentIndex].title}
                   </motion.h3>
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="text-white/80 text-sm md:text-base">
+                    className="text-white/80 text-sm md:text-base"
+                  >
                     {images[currentIndex].description}
                   </motion.p>
                 </div>
@@ -139,14 +143,16 @@ const ImageCarousel = () => {
               variant="ghost"
               size="icon"
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white backdrop-blur-sm"
-              onClick={goToPrevious}>
+              onClick={goToPrevious}
+            >
               <ChevronLeft className="w-6 h-6" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white backdrop-blur-sm"
-              onClick={goToNext}>
+              onClick={goToNext}
+            >
               <ChevronRight className="w-6 h-6" />
             </Button>
           </div>
@@ -177,7 +183,8 @@ const ImageCarousel = () => {
                     ? "ring-2 ring-primary ring-offset-2 ring-offset-background scale-110"
                     : "opacity-60 hover:opacity-100"
                 }`}
-                whileHover={{ scale: index === currentIndex ? 1.1 : 1.05 }}>
+                whileHover={{ scale: index === currentIndex ? 1.1 : 1.05 }}
+              >
                 <Image
                   src={image.src}
                   alt={image.alt}
