@@ -1,19 +1,33 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "images.unsplash.com",
+        pathname: "/**",
       },
-    ],
-    domains: [
-      "logo.clearbit.com",
-      "upload.wikimedia.org",
-      "logospng.org",
-      "wallpapercave.com",
+      {
+        protocol: "https",
+        hostname: "logo.clearbit.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "logospng.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "wallpapercave.com",
+        pathname: "/**",
+      },
     ],
   },
 };
