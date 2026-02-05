@@ -50,7 +50,7 @@ const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-4">
+          <span className="inline-block text-transparent bg-clip-text bg-linear-to-r from-primary to-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-4">
             About Us
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
