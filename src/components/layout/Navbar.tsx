@@ -151,7 +151,7 @@ const Navbar = () => {
               )}
             </Button> */}
             <button
-              className={`p-2 transition-colors ${
+              className={`p-2 transition-colors cursor-pointer ${
                 isAbout || isContact || isProgram || isPartnership ? "text-foreground" : isScrolled ? "text-foreground" : "text-white"
               }`}
               onClick={() => setIsMobileOpen(!isMobileOpen)}

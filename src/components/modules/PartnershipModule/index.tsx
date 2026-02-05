@@ -13,6 +13,7 @@ import { partnershipPrograms } from "./data/partnership-programs";
 import PartnershipLogoCarousel from "./section/PartnershipLogoCarousel";
 import { partnerLogos } from "./data/partner-logos";
 import ChatbotFAB from "../ChatbotModule";
+import BackToTopButton from "../LandingPageModules/sections/BackToTopButton";
 
 const PartnershipModule = () => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -71,6 +72,8 @@ const PartnershipModule = () => {
         </motion.div>
       </div>
       <ChatbotFAB />
+      <BackToTopButton/>
+
     </section>
   );
 };

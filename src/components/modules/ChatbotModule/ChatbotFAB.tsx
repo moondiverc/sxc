@@ -19,7 +19,7 @@ export default function ChatbotFAB() {
           "h-14 w-14 rounded-full shadow-xl",
           "bg-blue-600 hover:bg-blue-700 text-white",
           "flex items-center justify-center",
-          "transition-transform active:scale-95",
+          "transition-transform active:scale-95 cursor-pointer",
         )}
         aria-label="Open AI Chatbot"
         title="Chat dengan AI"
