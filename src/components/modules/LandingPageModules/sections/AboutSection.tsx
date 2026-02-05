@@ -94,7 +94,7 @@ const AboutSection = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                   className="group relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-accent/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="relative bg-card border border-border rounded-xl p-6 h-full transition-all duration-300 hover:border-primary/30">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                       <feature.icon className="w-6 h-6 text-primary" />
@@ -134,7 +134,7 @@ const AboutSection = () => {
 
               {/* Center glow */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-72 h-72 rounded-full bg-gradient-to-br from-primary/30 via-accent/30 to-primary/20 blur-3xl" />
+                <div className="w-72 h-72 rounded-full bg-linear-to-br from-primary/30 via-accent/30 to-primary/20 blur-3xl" />
               </div>
 
               {/* Monas Image */}
@@ -143,14 +143,14 @@ const AboutSection = () => {
                   <Image
                     src={monas}
                     alt="Monas Monument Jakarta"
-                    className="drop-shadow-2xl h-100"
+                    className="drop-shadow-2xl h-80 sm:h-100"
                     priority
                   />
-                  <div className="relative -top-20">
-                    <div className="text-5xl font-black text-transparent bg-clip-text bg-linear-to-br from-primary via-accent to-primary">
+                  <div className="relative -top-17 sm:-top-20 ">
+                    <div className=" text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-linear-to-br from-primary via-accent to-primary ">
                       14 Years
                     </div>
-                    <div className="text-lg font-semibold text-foreground mt-2">
+                    <div className="text-md sm:text-lg font-semibold text-foreground mt-0 sm:mt-2">
                       of Impact Since 2010
                     </div>
                   </div>
@@ -161,7 +161,7 @@ const AboutSection = () => {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute top-10 right-0 bg-card shadow-lg rounded-xl p-4 border border-border">
+                className="absolute top-10 right-0 bg-card shadow-lg rounded-xl p-2 sm:p-5 border border-border">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <Users className="w-4 h-4 text-primary" />
@@ -178,7 +178,7 @@ const AboutSection = () => {
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 5, repeat: Infinity }}
-                className="absolute -bottom-5 left-0 bg-card shadow-lg rounded-xl p-4 border border-border">
+                className="absolute -bottom-2 sm:-bottom-8 left-0 bg-card shadow-lg rounded-xl p-2 sm:p-5 border border-border">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
                     <TrendingUp className="w-4 h-4 text-accent" />

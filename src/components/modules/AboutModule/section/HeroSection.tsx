@@ -25,7 +25,7 @@ export const HeroSection = () => {
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
             Think-Tank for{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               Future Leaders
             </span>
           </h1>
@@ -58,7 +58,7 @@ export const HeroSection = () => {
 
             {/* Center glow */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-72 h-72 rounded-full bg-gradient-to-br from-primary/30 via-accent/30 to-primary/20 blur-3xl" />
+              <div className="w-72 h-72 rounded-full bg-linear-to-br from-primary/30 via-accent/30 to-primary/20 blur-3xl" />
             </div>
 
             {/* Monas Image */}
@@ -67,14 +67,14 @@ export const HeroSection = () => {
                 <Image
                   src={monas}
                   alt="Monas Monument Jakarta"
-                  className="drop-shadow-2xl h-100"
+                  className="drop-shadow-2xl h-80 sm:h-100"
                   priority
                 />
-                <div className="relative -top-20">
-                  <div className="text-5xl font-black text-transparent bg-clip-text bg-linear-to-br from-primary via-accent to-primary">
+                <div className="relative -top-17 sm:-top-20 ">
+                  <div className=" text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-linear-to-br from-primary via-accent to-primary ">
                     14 Years
                   </div>
-                  <div className="text-lg font-semibold text-foreground mt-2">
+                  <div className="text-md sm:text-lg font-semibold text-foreground mt-0 sm:mt-2">
                     of Impact Since 2010
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export const HeroSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                 className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-accent/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative bg-card border border-border rounded-xl p-6 h-full transition-all duration-300 hover:border-primary/30">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <feature.icon className="w-6 h-6 text-primary" />

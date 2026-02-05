@@ -3,22 +3,36 @@
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+
+const scrollTargetByPath: Record<string, string> = {
+  "/": "home",
+  "/about": "about",
+  "/program": "program",
+  "/partnership": "partnership",
+  "/contact": "contact",
+};
 
 const BackToTopButton = () => {
   const [show, setShow] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => {
-      setShow(window.scrollY > 400); // muncul setelah scroll 400px
+      setShow(window.scrollY > 400);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const scrollToTop = () => {
-    const el = document.getElementById("home");
+    const targetId = scrollTargetByPath[pathname] ?? "home";
+    const el = document.getElementById(targetId);
+
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 

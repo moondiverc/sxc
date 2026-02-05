@@ -119,7 +119,7 @@ const LeafletMap = ({ onError }: { onError?: () => void }) => {
         mapInstanceRef.current = null;
       }
     };
-  }, [onError]);
+  }, []);
 
   return (
     <div className="relative h-48 rounded-xl overflow-hidden z-10">

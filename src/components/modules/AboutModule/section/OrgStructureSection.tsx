@@ -7,21 +7,21 @@ import cdtoBg from "@/assets/cdto-bg.png";
 
 export const OrgStructureSection = () => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "650px" });
 
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <motion.h2
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-16">
+          className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-8 md:mb-16">
           Our Leadership
         </motion.h2>
 
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative overflow-hidden">
           {/* CEO Box */}
           <motion.div
             ref={ref}
@@ -31,7 +31,7 @@ export const OrgStructureSection = () => {
             className="flex justify-center mb-12">
             <div className="relative group">
               <div className="absolute inset-0 bg-linear-to-br from-primary/30 to-accent/30 rounded-2xl blur-xl" />
-              <div className="relative bg-card border-2 border-primary rounded-2xl p-8 text-center min-w-60">
+              <div className="relative bg-card border-2 border-primary rounded-2xl p-4 md:p-8 text-center min-w-40 md:min-w-60">
                 <div
                   style={{ backgroundImage: `url(${cdtoBg.src})` }}
                   className="
@@ -55,14 +55,14 @@ export const OrgStructureSection = () => {
           </motion.div>
 
           {/* Tree Lines Container */}
-          <div className="relative h-32 mb-8">
+          <div className="relative h-20 md:h-32 mb-6 md:mb-8">
             {/* Main vertical line from CEO */}
             <motion.div
               initial={{ opacity: 0, scaleY: 0 }}
               animate={isInView ? { opacity: 1, scaleY: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="absolute top-0 left-1/2 -translate-x-1/2 origin-top">
-              <div className="w-1.5 h-20 bg-primary" />
+              <div className="w-1.5 h-12 md:h-20 bg-primary" />
             </motion.div>
 
             {/* Horizontal line connecting managers */}
@@ -70,7 +70,7 @@ export const OrgStructureSection = () => {
               initial={{ opacity: 0, scaleX: 0 }}
               animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="absolute top-20 left-1/4 right-1/4 origin-center">
+              className="absolute top-12 md:top-20 left-1/4 right-1/4 origin-center">
               <div className="w-full h-1.5 bg-primary" />
             </motion.div>
 
@@ -79,21 +79,21 @@ export const OrgStructureSection = () => {
               initial={{ opacity: 0, scaleY: 0 }}
               animate={isInView ? { opacity: 1, scaleY: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="absolute top-20 left-1/4 -translate-x-1/2 origin-top">
-              <div className="w-1.5 h-12 bg-primary" />
+              className="absolute top-12 md:top-20 left-1/4 -translate-x-1/2 origin-top">
+              <div className="w-1.5 h-8 md:h-12 bg-primary" />
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, scaleY: 0 }}
               animate={isInView ? { opacity: 1, scaleY: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="absolute top-20 right-1/4 translate-x-1/2 origin-top">
-              <div className="w-1.5 h-12 bg-primary" />
+              className="absolute top-12 md:top-20 right-1/4 translate-x-1/2 origin-top">
+              <div className="w-1.5 h-8 md:h-12 bg-primary" />
             </motion.div>
           </div>
 
           {/* Managers Grid */}
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
             {orgStructure.managers.map((manager, deptIndex) => (
               <motion.div
                 key={deptIndex}
@@ -106,20 +106,20 @@ export const OrgStructureSection = () => {
                 }}
                 className="relative">
                 {/* Manager Card */}
-                <div className="bg-card border-2 border-primary/50 rounded-xl p-6 text-center mb-0 transition-all duration-300 hover:border-primary/80">
+                <div className="bg-card border-2 border-primary/50 rounded-xl p-4 md:p-6 text-center mb-0 transition-all duration-300 hover:border-primary/80">
                   <div
                     style={{ backgroundImage: `url(${manager.imageSrc.src})` }}
                     className="
-                    w-24 h-24 rounded-full
+                    w-16 md:w-24 h-16 md:h-24 rounded-full
                     bg-cover bg-center bg-no-repeat
                     flex items-center justify-center
-                    mx-auto mb-4
+                    mx-auto mb-3 md:mb-4
                     ring-4 ring-primary/20
                     shadow-xl"></div>
-                  <h5 className="font-bold text-lg text-foreground">
+                  <h5 className="font-bold text-base md:text-lg text-foreground">
                     {manager.role}
                   </h5>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">
                     {manager.name}
                   </p>
                 </div>
@@ -130,7 +130,7 @@ export const OrgStructureSection = () => {
                   animate={isInView ? { opacity: 1, scaleY: 1 } : {}}
                   transition={{ duration: 0.4, delay: 0.55 + deptIndex * 0.1 }}
                   className="flex justify-center origin-top">
-                  <div className="w-1.5 h-6 bg-primary" />
+                  <div className="w-1.5 h-4 md:h-6 bg-primary" />
                 </motion.div>
 
                 {/* Horizontal line connecting team members */}
@@ -138,15 +138,16 @@ export const OrgStructureSection = () => {
                   initial={{ opacity: 0, scaleX: 0 }}
                   animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
                   transition={{ duration: 0.4, delay: 0.6 + deptIndex * 0.1 }}
-                  className="flex justify-center origin-center">
+                  className="flex justify-center origin-center overflow-x-hidden">
                   <div
-                    className={`${manager.team.length === 4 ? "w-[342px]" : "w-57.5"} h-1.5 bg-primary`}
+                    className={`${manager.team.length === 4 ? "w-46.5 md:ml-1 md:w-68.5 lg:w-85.5 lg:mr-1" : "w-31.5 md:w-49.5 lg:w-57.5"} h-1.5 bg-primary`}
                   />
                 </motion.div>
 
                 {/* Team Members Container with lines */}
-                <div className="relative px-4">
-                  <div className={`flex ${manager.team.length === 4 ? "justify-center" : "justify-center"} gap-12 relative`}>
+                <div className="relative px-2 md:px-4">
+                  <div
+                    className={`flex ${manager.team.length === 4 ? "justify-center " : "justify-center"} gap-3 lg:gap-12 md:gap-8 relative`}>
                     {manager.team.map((member, memberIndex) => (
                       <motion.div
                         key={memberIndex}
@@ -166,7 +167,7 @@ export const OrgStructureSection = () => {
                             delay: 0.7 + deptIndex * 0.1 + memberIndex * 0.1,
                           }}
                           className="absolute top-0 origin-top">
-                          <div className="w-1.5  h-12 bg-primary" />
+                          <div className="w-1.5 h-8 md:h-12 bg-primary" />
                         </motion.div>
 
                         {/* Avatar */}
@@ -174,8 +175,8 @@ export const OrgStructureSection = () => {
                           style={{
                             backgroundImage: `url(${member.imageSrc.src})`,
                           }}
-                          className="w-14 h-14 rounded-full bg-cover bg-center bg-no-repeat from-primary/40 to-accent/40 flex items-center justify-center ring-2 ring-primary/30 shadow-md text-foreground font-bold mt-15"></div>
-                        <p className="text-xs  text-muted-foreground text-center max-w-16 mt-2">
+                          className="w-10 md:w-14 h-10 md:h-14 rounded-full bg-cover bg-center bg-no-repeat from-primary/40 to-accent/40 flex items-center justify-center ring-2 ring-primary/30 shadow-md text-foreground font-bold md:mt-15 mt-10"></div>
+                        <p className="text-xs text-muted-foreground text-center max-w-12 md:max-w-16 mt-2">
                           {member.name}
                         </p>
                       </motion.div>

@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { programs } from "./const";
 import ChatbotFAB from "../ChatbotModule";
+import BackToTopButton from "../LandingPageModules/sections/BackToTopButton";
 
 export const ProgramModule = () => {
   const ref = useRef(null);
@@ -84,6 +85,8 @@ export const ProgramModule = () => {
         </div>
       </div>
       <ChatbotFAB />
+      <BackToTopButton/>
+
     </section>
   );
 };

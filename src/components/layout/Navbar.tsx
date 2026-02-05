@@ -19,6 +19,10 @@ const navLinks = [
 const Navbar = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isAbout = pathname === "/about";
+  const isProgram = pathname === "/program";
+  const isPartnership = pathname === "/partnership";
+  const isContact = pathname === "/contact";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
@@ -147,8 +151,8 @@ const Navbar = () => {
               )}
             </Button> */}
             <button
-              className={`p-2 transition-colors ${
-                isScrolled ? "text-foreground" : "text-white"
+              className={`p-2 transition-colors cursor-pointer ${
+                isAbout || isContact || isProgram || isPartnership ? "text-foreground" : isScrolled ? "text-foreground" : "text-white"
               }`}
               onClick={() => setIsMobileOpen(!isMobileOpen)}
             >

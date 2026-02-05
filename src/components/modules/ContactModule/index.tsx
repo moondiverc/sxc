@@ -192,6 +192,8 @@ const ContactModule = () => {
         </div>
       </div>
       <ChatbotFAB />
+      <BackToTopButton/>
+
     </section>
   );
 };
