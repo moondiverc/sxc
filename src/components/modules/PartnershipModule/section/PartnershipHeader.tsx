@@ -37,7 +37,7 @@ export default function PartnershipHeader({
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="text-center max-w-3xl mx-auto mb-14">
+      className="text-center max-w-3xl mx-auto mb-2">
       <span className="text-primary text-sm font-semibold uppercase tracking-wider">
         {eyebrow}
       </span>
