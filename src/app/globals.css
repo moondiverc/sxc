@@ -189,6 +189,8 @@ html {
   animation-play-state: paused;
 }
 
+
+
 @keyframes partner-marquee-left {
   0% {
     transform: translateX(0);
