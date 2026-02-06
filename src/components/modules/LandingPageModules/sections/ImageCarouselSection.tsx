@@ -5,6 +5,7 @@ import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CarouselImage {
   src: string;
@@ -109,7 +110,7 @@ const ImageCarousel = () => {
             <div className="flex -ml-4">
               {images.map((image, index) => (
                 <div key={index} className="flex-[0_0_100%] min-w-0 pl-4">
-                  <div className="relative aspect-video rounded-md overflow-hidden shadow-2xl">
+                  <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -135,6 +136,20 @@ const ImageCarousel = () => {
               ))}
             </div>
           </div>
+
+          {/* Arrow Navigation */}
+          <button
+            type="button"
+            onClick={() => emblaApi?.scrollPrev()}
+            className="absolute left-4 top-[42%] -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white backdrop-blur-sm w-11 h-11 rounded-md flex items-center justify-center transition-colors">
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            type="button"
+            onClick={() => emblaApi?.scrollNext()}
+            className="absolute right-4 top-[42%] -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white backdrop-blur-sm w-11 h-11 rounded-md flex items-center justify-center transition-colors">
+            <ChevronRight className="w-6 h-6" />
+          </button>
 
           {/* Dots Indicator */}
           <div className="flex justify-center gap-2 mt-6">
