@@ -56,12 +56,8 @@ const ProgramCarousel = () => {
           {programs.map((program) => (
             <div
               key={program.id}
-              className="flex-[0_0_100%] min-w-0 pl-4 md:flex-[0_0_95%] lg:flex-[0_0_90%]">
-              {/* PERUBAHAN UTAMA:
-                  1. h-full berganti menjadi min-h-[600px] di mobile agar kartu bisa memanjang jika teks banyak.
-                  2. lg:min-h-[520px] untuk desktop agar tetap konsisten.
-                  3. Flex-col di mobile dan flex-row di desktop.
-                */}
+              className="flex-[0_0_100%] min-w-0 pl-4 md:flex-[0_0_95%] lg:flex-[0_0_90%]"
+            >
               <div className="group flex flex-col lg:flex-row bg-white border-2 border-primary/20 overflow-hidden min-h-150 lg:min-h-130 h-full shadow-2xl shadow-primary/10 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 items-stretch">
                 {/* Sisi Atas/Kiri: Gambar */}
                 <div className="relative w-full lg:w-1/2 h-62.5 lg:h-auto overflow-hidden shrink-0">
@@ -79,7 +75,7 @@ const ProgramCarousel = () => {
                   <div className="absolute inset-0 bg-black/30 lg:bg-black/10 transition-colors duration-500 group-hover:bg-transparent" />
                 </div>
 
-                {/* Sisi Bawah/Kanan: Konten */}
+                {/* Bottom/Right Side: Content */}
                 <div className="flex flex-col justify-between p-6 md:p-8 lg:p-14 w-full lg:w-1/2 grow">
                   <div className="space-y-4 lg:space-y-6">
                     <div className="flex items-center gap-4">
@@ -93,9 +89,6 @@ const ProgramCarousel = () => {
                       {program.title}
                     </h3>
 
-                    {/* Penyesuaian Mobile:
-                        Hapus line-clamp jika ingin semua teks muncul, atau atur jumlah baris yang lebih banyak di mobile.
-                      */}
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-md font-light">
                       {program.description}
                     </p>
@@ -115,7 +108,8 @@ const ProgramCarousel = () => {
                     <div className="pt-2">
                       <a
                         href="/program"
-                        className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-foreground group/btn transition-colors hover:text-primary">
+                        className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-foreground group/btn transition-colors hover:text-primary"
+                      >
                         Read More
                         <div className="relative flex h-10 w-10 items-center justify-center bg-primary transition-all duration-300 group-hover/btn:w-14 shrink-0">
                           <ArrowRight className="h-4 w-4 text-white" />
@@ -134,7 +128,8 @@ const ProgramCarousel = () => {
       <div className="mt-4 md:mt-8 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-8 border-t border-white/5 pt-10 px-2">
         <button
           onClick={toggleAutoplay}
-          className="flex h-12 w-12 items-center justify-center bg-white/5 border border-white/10 text-foreground hover:bg-primary hover:text-white transition-all shadow-sm group">
+          className="flex h-12 w-12 items-center justify-center bg-white/5 border border-white/10 text-foreground hover:bg-primary hover:text-white transition-all shadow-sm group"
+        >
           {isPlaying ? (
             <Pause size={18} className="fill-current" />
           ) : (
@@ -158,12 +153,14 @@ const ProgramCarousel = () => {
           <div className="flex gap-px">
             <button
               onClick={() => emblaApi?.scrollPrev()}
-              className="flex h-12 w-12 items-center justify-center bg-card text-foreground hover:bg-primary hover:text-white transition-all border border-white/5 shadow-sm">
+              className="flex h-12 w-12 items-center justify-center bg-card text-foreground hover:bg-primary hover:text-white transition-all border border-white/5 shadow-sm"
+            >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={() => emblaApi?.scrollNext()}
-              className="flex h-12 w-12 items-center justify-center bg-card text-foreground hover:bg-primary hover:text-white transition-all border border-white/5 shadow-sm">
+              className="flex h-12 w-12 items-center justify-center bg-card text-foreground hover:bg-primary hover:text-white transition-all border border-white/5 shadow-sm"
+            >
               <ChevronRight size={20} />
             </button>
           </div>

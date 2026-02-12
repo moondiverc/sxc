@@ -6,12 +6,12 @@ export default function NotFound() {
       <div className="text-center">
         <h1 className="mb-4 text-6xl font-bold text-foreground">404</h1>
         <p className="mb-6 text-xl text-muted-foreground">
-          Halaman tidak ditemukan
+          Page not found
         </p>
         <Link
           href="/"
           className="inline-block rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
-          Kembali ke Beranda
+          Back to Home
         </Link>
       </div>
     </div>

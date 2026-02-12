@@ -126,9 +126,7 @@ export default function ChatbotDialog({
           ))}
 
           {isLoading && (
-            <div className="text-xs text-gray-500 px-1">
-              AI sedang mengetik…
-            </div>
+            <div className="text-xs text-gray-500 px-1">AI is typing...</div>
           )}
 
           {error && (
@@ -163,7 +161,7 @@ export default function ChatbotDialog({
                 "bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:hover:bg-blue-600",
               )}
             >
-              Kirim
+              Send
             </button>
           </div>
         </div>
