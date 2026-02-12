@@ -67,8 +67,7 @@ const PartnershipSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
+          className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Partnership
           </span>
@@ -89,13 +88,11 @@ const PartnershipSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-        >
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-card rounded-2xl p-6 border border-border text-center"
-            >
+              className="bg-card rounded-2xl p-6 border border-border text-center">
               <benefit.icon className="w-8 h-8 text-primary mx-auto mb-3" />
               <div className="text-3xl font-bold text-foreground">
                 <AnimatedCounter
@@ -126,8 +123,7 @@ const PartnershipSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all group"
-            >
+              className="bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all group">
               <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <type.icon className="w-6 h-6 text-primary" />
               </div>
@@ -146,8 +142,7 @@ const PartnershipSection = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center"
-        >
+          className="text-center">
           <PartnerLogoCarousel
             items={partnerLogos}
             title={

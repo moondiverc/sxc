@@ -78,7 +78,7 @@ export const ProgramCard = ({
             href="https://docs.google.com/forms/d/e/1FAIpQLSfezJ4fESoXGCyr1UXkG1gqIif6f2ZylEfuNm2IPkNctmD_lQ/viewform?usp=dialog"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary hover:text-white transition-colors group/btn">
+            className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-foreground hover:text-primary transition-colors group/btn">
             Join Program
             <div className="relative flex h-8 w-8 items-center justify-center bg-primary transition-all duration-300 group-hover/btn:w-10 rounded-sm">
               <ArrowRight className="h-3 w-3 text-white" />

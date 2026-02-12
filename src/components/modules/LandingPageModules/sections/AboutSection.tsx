@@ -53,9 +53,9 @@ const AboutSection = () => {
           <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-4">
             About Us
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 whitespace-normal lg:whitespace-nowrap">
             Think-Tank for{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="inline bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               Future Leaders
             </span>
           </h2>

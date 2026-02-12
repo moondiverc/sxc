@@ -65,7 +65,10 @@ const ImpactSection = () => {
             Our Impact
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground mt-3 mb-6">
-            Measurable <span className="text-primary">Results</span>
+            Measurable{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
+              Results
+            </span>
           </h2>
           <p className="text-white/80 text-lg">
             Real numbers that demonstrate our commitment to developing future
@@ -106,7 +109,10 @@ const ImpactSection = () => {
             Success Stories
           </span>
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-foreground mt-2">
-            Hear from Our <span className="text-primary">Community</span>
+            Hear from Our{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
+              Community
+            </span>
           </h3>
         </motion.div>
 
