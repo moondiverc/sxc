@@ -29,11 +29,6 @@ const Navbar = () => {
   // const [isDark, setIsDark] = useState(false);
   const [, startTransition] = useTransition();
 
-  /**
-   * ✅ Navbar dibuat "solid" bila:
-   * - user sudah scroll, ATAU
-   * - menu mobile sedang terbuka
-   */
   const isSolid = isScrolled || isMobileOpen;
 
   useEffect(() => {
@@ -46,24 +41,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Bonus: ketika berpindah route, tutup mobile menu otomatis
   useEffect(() => {
     startTransition(() => {
       setIsMobileOpen(false);
     });
   }, [pathname, startTransition]);
-
-  // useEffect(() => {
-  //   if (isDark) {
-  //     document.documentElement.classList.add("dark");
-  //   } else {
-  //     document.documentElement.classList.remove("dark");
-  //   }
-  // }, [isDark]);
-
-  // const toggleTheme = () => {
-  //   setIsDark(!isDark);
-  // };
 
   return (
     <motion.nav
@@ -73,7 +55,8 @@ const Navbar = () => {
         isSolid
           ? "bg-background/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
-      }`}>
+      }`}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20 relative">
           {/* Logo */}
@@ -92,7 +75,8 @@ const Navbar = () => {
                       ? "text-secondary"
                       : "text-white"
                     : "text-secondary"
-                }`}>
+                }`}
+              >
                 Students
               </span>
               <span className="text-primary font-bold">x</span>
@@ -103,7 +87,8 @@ const Navbar = () => {
                       ? "text-secondary"
                       : "text-white"
                     : "text-secondary"
-                }`}>
+                }`}
+              >
                 CEOs
               </span>
             </div>
@@ -126,7 +111,8 @@ const Navbar = () => {
                           ? "text-muted-foreground hover:text-primary"
                           : "text-white/80 hover:text-white"
                         : "text-muted-foreground hover:text-primary"
-                  }`}>
+                  }`}
+                >
                   {link.name}
                   <span
                     className={`pointer-events-none absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-blue-500 origin-center transition-transform duration-300 ${
@@ -136,38 +122,10 @@ const Navbar = () => {
                 </motion.a>
               );
             })}
-
-            {/* Theme toggle (optional) */}
-            {/* <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="rounded-full"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-primary" />
-              ) : (
-                <Moon className="w-5 h-5 text-primary" />
-              )}
-            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 md:hidden">
-            {/* Theme toggle (optional) */}
-            {/* <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="rounded-full"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-primary" />
-              ) : (
-                <Moon className="w-5 h-5 text-primary" />
-              )}
-            </Button> */}
-
             <button
               aria-label="Toggle navigation menu"
               aria-expanded={isMobileOpen}
@@ -178,7 +136,8 @@ const Navbar = () => {
                     ? "text-foreground"
                     : "text-white"
               }`}
-              onClick={() => setIsMobileOpen((v) => !v)}>
+              onClick={() => setIsMobileOpen((v) => !v)}
+            >
               {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -192,7 +151,8 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-t border-border">
+            className="md:hidden bg-background border-t border-border"
+          >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -206,7 +166,8 @@ const Navbar = () => {
                         ? "text-blue-500"
                         : "text-foreground hover:text-blue-500"
                     }`}
-                    onClick={() => setIsMobileOpen(false)}>
+                    onClick={() => setIsMobileOpen(false)}
+                  >
                     {link.name}
                     <span
                       className={`absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-blue-500 origin-center transition-transform duration-300 ease-out ${

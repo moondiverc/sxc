@@ -9,7 +9,7 @@ export function useGeminiChat() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      content: "Halo! Aku chatbot AI. Ada yang bisa kubantu?",
+      content: "Hello! I'm an AI chatbot. How may I assist you?",
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,16 +39,16 @@ export function useGeminiChat() {
 
       const data = await res.json();
       if (!res.ok)
-        throw new Error(data?.error ?? "Gagal memanggil Gemini API.");
+        throw new Error(data?.error ?? "Failed to call Gemini API.");
 
       const assistantText =
-        (data?.text ?? "").trim() || "Maaf, aku belum punya jawaban untuk itu.";
+        (data?.text ?? "").trim() || "Sorry, I don't have an answer for that yet.";
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: assistantText },
       ]);
     } catch (e: any) {
-      setError(e?.message ?? "Terjadi error.");
+      setError(e?.message ?? "An error has occurred.");
     } finally {
       setIsLoading(false);
     }
@@ -58,7 +58,7 @@ export function useGeminiChat() {
     setMessages([
       {
         role: "assistant",
-        content: "Halo! Aku chatbot AI. Ada yang bisa kubantu?",
+        content: "Hello! I'm an AI chatbot. How may I assist you?",
       },
     ]);
     setError(null);

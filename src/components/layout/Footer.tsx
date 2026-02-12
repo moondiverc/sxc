@@ -42,7 +42,7 @@ const Footer = () => {
                 alt="Monas"
                 className="size-30 absolute -left-12 -top-14"
               />
-              {/* Bisa di atur disini */}
+              {/* Can be set here */}
               <div className="ml-9">
                 <span className="font-bold text-primary-foreground">
                   Students
